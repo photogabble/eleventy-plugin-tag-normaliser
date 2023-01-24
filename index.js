@@ -2,7 +2,8 @@ const {atlas, slugToStr, strToSlug} = require('./src/tag-atlas');
 
 const defaultOptions = {
   ignore: [],
-  similar: {}
+  similar: {},
+  slugify: require('./src/str-to-slug'),
 };
 
 const validateOptions = (options) => {
@@ -27,5 +28,5 @@ module.exports = function (eleventyConfig, customOptions = {}) {
   const tagAtlas = atlas(globalOptions);
 
   eleventyConfig.addFilter('strToSlug', strToSlug(tagAtlas));
-  eleventyConfig.addFilter('slugToString', slugToStr(tagAtlas));
+  eleventyConfig.addFilter('slugToStr', slugToStr(tagAtlas));
 };
