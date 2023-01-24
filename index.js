@@ -17,6 +17,9 @@ const validateOptions = (options) => {
       case 'similar':
         validated.similar = value;
         break;
+      case 'slugify':
+        if (typeof value === 'function') validated.slugify = value;
+        break;
     }
   }
   return validated;
