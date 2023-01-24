@@ -1,0 +1,42 @@
+{
+  "name": "@photogabble/eleventy-plugin-tag-normaliser",
+  "version": "1.0.0",
+  "description": "Tag normalisation helper for 11ty",
+  "keywords": [
+    "11ty",
+    "eleventy",
+    "eleventy-plugin",
+    "taxonomy"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "test": "ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/photogabble/eleventy-plugin-tag-normaliser.git"
+  },
+  "author": "Simon Dann (https://photogabble.co.uk/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/photogabble/eleventy-plugin-tag-normaliser/issues"
+  },
+  "homepage": "https://github.com/photogabble/eleventy-plugin-tag-normaliser#readme",
+  "peerDependencies": {
+    "@11ty/eleventy": "*"
+  },
+  "peerDependenciesMeta": {
+    "@11ty/eleventy": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "slugify": "^1.6.5"
+  },
+  "devDependencies": {
+    "ava": "^4.0.1"
+  },
+  "directories": {
+    "test": "tests"
+  }
+}
