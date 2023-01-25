@@ -46,7 +46,7 @@ test('unknown tags return undefined', t => {
     similar: {'Game Development': ['GameDev']},
   });
 
-  t.true(tagAtlas.find('hello world') === undefined, `[[hello world] should be undefined`);
+  t.is(tagAtlas.find('hello world'), undefined);
 });
 
 test('splitTitle correctly splits words', t => {
@@ -63,7 +63,7 @@ test('splitTitle correctly splits words', t => {
 
   for (const [input, expected] of Object.entries(checks)) {
     const result = tagAtlas.splitTitle(input);
-    t.true(result === expected, `[${result}] is not "${expected}"`);
+    t.is(result, expected);
   }
 });
 
@@ -78,7 +78,7 @@ test('strToSlug works correctly when tile atlas given no config options', t => {
   };
 
   for (const [input, output] of Object.entries(checks)) {
-    t.true(fn(input) === output, `[${fn(input)}] is not "${output}"`);
+    t.is(fn(input), output);
   }
 });
 
@@ -96,7 +96,7 @@ test('slugToStr works correctly when tile atlas given no config options', t => {
   };
 
   for (const [input, output] of Object.entries(checks)) {
-    t.true(fn(input) === output, `[${fn(input)}] is not "${output}"`);
+    t.is(fn(input), output);
   }
 });
 
@@ -115,7 +115,7 @@ test('slugToStr returns the split title from strToSlug', t => {
   for (const [input, expected] of Object.entries(checks)) {
     const slug = stringToSlug(input);
     const result = slugToString(slug);
-    t.true(result === expected, `[${result}] does not match "${expected}"`);
+    t.is(result, expected);
   }
 })
 
@@ -124,10 +124,10 @@ test('lowercase variants added on creation', t => {
 
   // This should create two records, one for "JavaScript" and one for "javascript".
   tagAtlas.findOrCreateByTitle('JavaScript');
-  t.true(tagAtlas.find('JavaScript').title === tagAtlas.find('javascript').title);
+  t.is(tagAtlas.find('JavaScript').title, tagAtlas.find('javascript').title);
 
   tagAtlas.findOrCreateByTitle('DOS');
-  t.true(tagAtlas.find('DOS').title === tagAtlas.find('dos').title);
+  t.is(tagAtlas.find('DOS').title, tagAtlas.find('dos').title);
 })
 
 test('nesting of similar tags limited to two deep', t => {
@@ -137,7 +137,7 @@ test('nesting of similar tags limited to two deep', t => {
   const child = tagAtlas.tags.find(t => t.slug === 'game-dev');
   const parent = tagAtlas.tags.find(t => t.slug === 'game-development');
 
-  t.true(lowercaseChild.is === parent);
-  t.true(child.is === parent);
-  t.true(parent.is === undefined);
+  t.is(lowercaseChild.is, parent);
+  t.is(child.is, parent);
+  t.is(parent.is, undefined);
 });

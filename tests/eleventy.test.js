@@ -27,17 +27,17 @@ const eleventyMockFactory = () => {
 test('calls addFilter x2', t => {
   const eleventyMock = eleventyMockFactory();
 
-  t.true(eleventyMock.calls.addFilter === 0);
+  t.is(eleventyMock.calls.addFilter, 0);
   plugin(eleventyMock)
-  t.true(eleventyMock.calls.addFilter === 2);
+  t.is(eleventyMock.calls.addFilter, 2);
 });
 
 test('make tagAtlas available as eleventy global data', t => {
   const eleventyMock = eleventyMockFactory();
 
-  t.true(eleventyMock.calls.addGlobalData === 0);
+  t.is(eleventyMock.calls.addGlobalData, 0);
   plugin(eleventyMock)
-  t.true(eleventyMock.calls.addGlobalData === 1);
+  t.is(eleventyMock.calls.addGlobalData, 1);
 
   t.true(eleventyMock.globalData['tagAtlas'] === atlas());
 })
