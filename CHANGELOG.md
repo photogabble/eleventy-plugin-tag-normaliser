@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.3] - 2023-01-25
+
 ### Added
 
 - `TagAtlas` now made available in module export
@@ -33,3 +35,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - Initial version of this 11ty plugin providing `strToSlug` and `slugToStr` helper methods backed by a tag atlas class which acts to deduplicate and normalise tags.
+
+[unreleased]: https://github.com/photogabble/eleventy-plugin-tag-normaliser/compare/v1.0.3...HEAD
+[1.0.3]: https://github.com/photogabble/eleventy-plugin-tag-normaliser/compare/v1.0.2...v1.0.3
+[1.0.2]: https://github.com/photogabble/eleventy-plugin-tag-normaliser/compare/v1.0.1...v1.0.2
+[1.0.1]: https://github.com/photogabble/eleventy-plugin-tag-normaliser/compare/v1.0.0...v1.0.1
+[1.0.0]: https://github.com/photogabble/eleventy-plugin-tag-normaliser/releases/tag/v1.0.0
