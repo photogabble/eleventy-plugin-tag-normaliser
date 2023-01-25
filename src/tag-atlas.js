@@ -1,21 +1,24 @@
 class TagAtlas {
   constructor(config) {
     this.tags = [];
-    this.ignored = config.ignore;
+    this.ignored = config.ignore || [];
     this.slugify = config.slugify;
 
-    // ignore: ['PHP', 'JS', 'JavaScript'] - getTitle will return matches as these regardless of input
-    // case e.g. php -> PHP, javascript -> JavaScript
-    for (const tag of config.ignore) {
-      this.tags.push({
-        title: tag,
-        slug: this.slugify(tag)
-      });
+    if (config.ignore) {
+      // ignore: ['PHP', 'JS', 'JavaScript'] - getTitle will return matches as these regardless of input
+      // case e.g. php -> PHP, javascript -> JavaScript
+      for (const tag of config.ignore) {
+        this.tags.push({
+          title: tag,
+          slug: this.slugify(tag)
+        });
+      }
     }
 
-    // similar: {'Game Development': ['GameDev']} - GameDev will always link to Game Development
-    for (const tag of Object.keys(config.similar)) {
-      const mainTag = this.findOrCreateByTitle(tag);
+    if (config.similar) {
+      // similar: {'Game Development': ['GameDev']} - GameDev will always link to Game Development
+      for (const tag of Object.keys(config.similar)) {
+        const mainTag = this.findOrCreateByTitle(tag);
 
         for (const similarTag of config.similar[tag]) {
           this.findOrCreateByTitle(similarTag, mainTag)
