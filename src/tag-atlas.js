@@ -30,8 +30,19 @@ class TagAtlas {
   splitTitle(title) {
     if (this.ignored.find(i => i.toLowerCase() === title.toLowerCase())) return title;
 
-    const splitTitle = title.match(/[A-Z][a-z]+|[0-9]+/g);
-    return (splitTitle) ? splitTitle.join(" ") : title;
+    // TODO: Sanitise title of all punctuation?
+
+    const containsCapitals = new RegExp(/[A-Z]+/g);
+    const containsLowercase = new RegExp(/[a-z]+/g);
+
+    // if title has no capitals then return as is.
+    if (containsCapitals.test(title) === false) return title;
+
+    // else if title is all capitals then return as is.
+    if (containsLowercase.test(title) === false) return title;
+
+    // else split on capitals
+    return title.split(/([A-Z][a-z]+)/).filter(function(e){return e}).join(' ');
   }
 
   // Lookup by title
@@ -95,6 +106,7 @@ const memoize = (config) => {
 }
 
 module.exports = {
+  TagAtlas,
   atlas: memoize,
   strToSlug: (atlas) => (str) => atlas.findOrCreateByTitle(str).slug,
   slugToStr: (atlas) => (slug) => atlas.findOrCreateBySlug(slug, true).title,
