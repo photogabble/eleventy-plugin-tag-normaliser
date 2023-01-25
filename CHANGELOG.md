@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- `strToSlug` helper should be using `findOrCreateByTitle`
+- Automatically ignore splitting any title that's all uppercase or all lowercase
+
 ## [1.0.2] - 2023-01-25
 
 ### Added
