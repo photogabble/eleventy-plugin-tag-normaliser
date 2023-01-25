@@ -25,11 +25,12 @@ const validateOptions = (options) => {
   return validated;
 };
 
-
 module.exports = function (eleventyConfig, customOptions = {}) {
   const globalOptions = Object.assign({}, defaultOptions, validateOptions(customOptions));
   const tagAtlas = atlas(globalOptions);
 
   eleventyConfig.addFilter('strToSlug', strToSlug(tagAtlas));
   eleventyConfig.addFilter('slugToStr', slugToStr(tagAtlas));
+
+  eleventyConfig.addGlobalData('tagAtlas', tagAtlas);
 };
