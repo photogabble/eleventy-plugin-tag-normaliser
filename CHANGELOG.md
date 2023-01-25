@@ -9,11 +9,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- (#1b6b7737) Limited similar depth to two deep, for example: `gamedev` and `game-dev` now can map to `game-development` whereas before `gamedev` would map to `game-dev` which mapped to `game-development`
+- ([1b6b7737]) Limited similar depth to two deep, for example: `gamedev` and `game-dev` now can map to `game-development` whereas before `gamedev` would map to `game-dev` which mapped to `game-development`
 
 ### Fixed
 
-- (#29053958) Removed double space from sometimes appearing in title's
+- ([29053958]) Removed double space from sometimes appearing in title's
 
 ## [1.0.3] - 2023-01-25
 
@@ -49,3 +49,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [1.0.2]: https://github.com/photogabble/eleventy-plugin-tag-normaliser/compare/v1.0.1...v1.0.2
 [1.0.1]: https://github.com/photogabble/eleventy-plugin-tag-normaliser/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/photogabble/eleventy-plugin-tag-normaliser/releases/tag/v1.0.0
+
+[1b6b7737]:https://github.com/photogabble/eleventy-plugin-tag-normaliser/commit/1b6b7737
+[29053958]:https://github.com/photogabble/eleventy-plugin-tag-normaliser/commit/29053958
