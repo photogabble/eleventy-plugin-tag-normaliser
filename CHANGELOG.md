@@ -7,10 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- `TagAtlas` now made available in module export
+
 ### Fixed
 
 - `strToSlug` helper should be using `findOrCreateByTitle`
 - Automatically ignore splitting any title that's all uppercase or all lowercase
+- Tests where sharing the same instance of `TagAtlas` which polluted their environment and caused unexpected behaviour
 
 ## [1.0.2] - 2023-01-25
 
