@@ -9,7 +9,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- (1b6b7737) Limited similar depth to two deep, for example: `gamedev` and `game-dev` now can map to `game-development` whereas before `gamedev` would map to `game-dev` which mapped to `game-development`.
+- (1b6b7737) Limited similar depth to two deep, for example: `gamedev` and `game-dev` now can map to `game-development` whereas before `gamedev` would map to `game-dev` which mapped to `game-development`
+
+### Fixed
+
+- (29053958) Removed double space from sometimes appearing in title's
 
 ## [1.0.3] - 2023-01-25
 
