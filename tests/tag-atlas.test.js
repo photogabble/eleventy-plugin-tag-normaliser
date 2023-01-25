@@ -129,3 +129,15 @@ test('lowercase variants added on creation', t => {
   tagAtlas.findOrCreateByTitle('DOS');
   t.true(tagAtlas.find('DOS').title === tagAtlas.find('dos').title);
 })
+
+test('nesting of similar tags limited to two deep', t => {
+  const tagAtlas = new TagAtlas({slugify, similar: {'Game Development': ['GameDev']}});
+
+  const lowercaseChild = tagAtlas.tags.find(t => t.slug === 'gamedev');
+  const child = tagAtlas.tags.find(t => t.slug === 'game-dev');
+  const parent = tagAtlas.tags.find(t => t.slug === 'game-development');
+
+  t.true(lowercaseChild.is === parent);
+  t.true(child.is === parent);
+  t.true(parent.is === undefined);
+});

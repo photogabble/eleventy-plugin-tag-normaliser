@@ -74,7 +74,7 @@ class TagAtlas {
     // related.
 
     if (slug.includes('-')) {
-      this.findOrCreateByTitle(title.toLowerCase(), tag);
+      this.findOrCreateByTitle(title.toLowerCase(), is || tag);
     }
 
     return tag;
