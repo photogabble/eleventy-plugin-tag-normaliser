@@ -17,8 +17,9 @@ class TagAtlas {
     for (const tag of Object.keys(config.similar)) {
       const mainTag = this.findOrCreateByTitle(tag);
 
-      for (const similarTag of config.similar[tag]) {
-        this.findOrCreateByTitle(similarTag, mainTag.slug)
+        for (const similarTag of config.similar[tag]) {
+          this.findOrCreateByTitle(similarTag, mainTag)
+        }
       }
     }
   }
@@ -39,7 +40,7 @@ class TagAtlas {
   // Lookup by slug
   findBySlug(slug, followSimilar = false) {
     const found = this.tags.find(t => t.slug === slug);
-    if (found && followSimilar && found.is) return this.findBySlug(found.is, true);
+    if (found && followSimilar && found.is) return found.is;
     return found;
   }
 
