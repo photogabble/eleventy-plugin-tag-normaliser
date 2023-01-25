@@ -88,6 +88,6 @@ const memoize = (config) => {
 
 module.exports = {
   atlas: memoize,
-  strToSlug: (atlas) => (str) => atlas.findOrCreateBySlug(str).slug,
+  strToSlug: (atlas) => (str) => atlas.findOrCreateByTitle(str).slug,
   slugToStr: (atlas) => (slug) => atlas.findOrCreateBySlug(slug, true).title,
 }
