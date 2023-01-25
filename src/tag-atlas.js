@@ -73,6 +73,7 @@ class TagAtlas {
   }
 }
 
+// Memoized copy of TagAtlas, the plugin will populate this as soon as Eleventy loads the plugin.
 let atlas;
 
 const memoize = (config) => {
