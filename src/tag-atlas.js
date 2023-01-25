@@ -49,14 +49,22 @@ class TagAtlas {
 
   // Lookup by title
   findOrCreateByTitle(title, is) {
-    title = this.splitTitle(title);
-    const slug = this.slugify(title);
+    const normalisedTitle = this.splitTitle(title);
+    const slug = this.slugify(normalisedTitle);
     const found = this.findBySlug(slug);
 
     if (found) return found;
 
-    const tag = {title, slug, is};
+    const tag = {title: normalisedTitle, slug, is};
     this.tags.push(tag);
+
+    // If slug has - then lowercase title and findOrCreateByTitle again with
+    // tag as parent. This teaches the atlas that lowercase alternatives are
+    // related.
+
+    if (slug.includes('-')) {
+      this.findOrCreateByTitle(title.toLowerCase(), tag);
+    }
 
     return tag;
   }
