@@ -10,7 +10,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - ([1b6b7737]) Limited similar depth to two deep, for example: `gamedev` and `game-dev` now can map to `game-development` whereas before `gamedev` would map to `game-dev` which mapped to `game-development`
-- ([2705060f]) Updated version of [ava](https://www.npmjs.com/package/ava) in use to v5.1.1.
+- ([2705060f]) Updated version of [ava](https://www.npmjs.com/package/ava) in use to v5.1.1
+- ([fa658a04]) Added usage of [c8](https://github.com/bcoe/c8) for test coverage reporting
 
 ### Fixed
 
@@ -54,3 +55,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [1b6b7737]:https://github.com/photogabble/eleventy-plugin-tag-normaliser/commit/1b6b7737
 [29053958]:https://github.com/photogabble/eleventy-plugin-tag-normaliser/commit/29053958
 [2705060f]:https://github.com/photogabble/eleventy-plugin-tag-normaliser/commit/2705060f
+[fa658a04]:https://github.com/photogabble/eleventy-plugin-tag-normaliser/commit/fa658a04
