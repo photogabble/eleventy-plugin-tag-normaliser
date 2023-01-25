@@ -42,7 +42,7 @@ class TagAtlas {
     if (containsLowercase.test(title) === false) return title;
 
     // else split on capitals
-    return title.split(/([A-Z][a-z]+)/).filter(function(e){return e}).join(' ');
+    return title.split(/([A-Z][a-z]+)/).filter(function(e){return e && e !== ' '}).join(' ');
   }
 
   // Lookup by title
@@ -62,7 +62,7 @@ class TagAtlas {
   findOrCreateByTitle(title, is) {
     const normalisedTitle = this.splitTitle(title);
     const slug = this.slugify(normalisedTitle);
-    const found = this.findBySlug(slug);
+    const found = this.findBySlug(slug, true);
 
     if (found) return found;
 
