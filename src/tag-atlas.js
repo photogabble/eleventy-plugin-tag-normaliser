@@ -80,8 +80,9 @@ class TagAtlas {
 // Memoized copy of TagAtlas, the plugin will populate this as soon as Eleventy loads the plugin.
 let atlas;
 
+// Memoize atlas if not already set, or if set, and we have config provided.
 const memoize = (config) => {
-  if (!atlas) atlas = new TagAtlas(config);
+  if (!atlas || config) atlas = new TagAtlas(config);
   return atlas;
 }
 
