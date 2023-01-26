@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.4] - 2023-01-26
+
 ### Changed
 
 - ([1b6b7737]) Limited similar depth to two deep, for example: `gamedev` and `game-dev` now can map to `game-development` whereas before `gamedev` would map to `game-dev` which mapped to `game-development`
@@ -47,6 +49,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Initial version of this 11ty plugin providing `strToSlug` and `slugToStr` helper methods backed by a tag atlas class which acts to deduplicate and normalise tags.
 
 [unreleased]: https://github.com/photogabble/eleventy-plugin-tag-normaliser/compare/v1.0.3...HEAD
+[1.0.4]: https://github.com/photogabble/eleventy-plugin-tag-normaliser/compare/v1.0.3...v1.0.4
 [1.0.3]: https://github.com/photogabble/eleventy-plugin-tag-normaliser/compare/v1.0.2...v1.0.3
 [1.0.2]: https://github.com/photogabble/eleventy-plugin-tag-normaliser/compare/v1.0.1...v1.0.2
 [1.0.1]: https://github.com/photogabble/eleventy-plugin-tag-normaliser/compare/v1.0.0...v1.0.1
