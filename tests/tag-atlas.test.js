@@ -67,6 +67,11 @@ test('splitTitle correctly splits words', t => {
   }
 });
 
+test('find returns undefined on empty input', t => {
+  const tagAtlas = new TagAtlas({slugify});
+  t.is(tagAtlas.find(), undefined);
+})
+
 test('strToSlug works correctly when tile atlas given no config options', t => {
   const tagAtlas = new TagAtlas({slugify});
   const fn = strToSlug(tagAtlas);

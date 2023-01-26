@@ -34,3 +34,5 @@ module.exports = function (eleventyConfig, customOptions = {}) {
 
   eleventyConfig.addGlobalData('tagAtlas', tagAtlas);
 };
+
+module.exports.validateOptions = validateOptions;

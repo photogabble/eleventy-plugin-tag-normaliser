@@ -24,6 +24,15 @@ const eleventyMockFactory = () => {
   };
 };
 
+test('validates configuration', t => {
+  t.deepEqual(Object.keys(plugin.validateOptions({})), []);
+  t.deepEqual(Object.keys(plugin.validateOptions({ignore: 'abc'})), []);
+  t.deepEqual(Object.keys(plugin.validateOptions({ignore: ['abc']})), ['ignore']);
+  t.deepEqual(Object.keys(plugin.validateOptions({similar: ['abc']})), ['similar']);
+  t.deepEqual(Object.keys(plugin.validateOptions({slugify: ''})), []);
+  t.deepEqual(Object.keys(plugin.validateOptions({slugify: () => {}})), ['slugify']);
+});
+
 test('calls addFilter x2', t => {
   const eleventyMock = eleventyMockFactory();
 
